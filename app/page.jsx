@@ -1,5 +1,6 @@
 'use client';
 import { assets } from "@/assets/assets";
+import Message from "@/components/Message";
 import PromptBox from "@/components/PromptBox";
 import Sidebar from "@/components/Sidebar";
 import Image from "next/image";
@@ -22,7 +23,7 @@ export default function Home() {
             <Image className="opacity-70" src={assets.chat_icon} alt="" />
           </div>
 
-          {messages.length == 0 ? (
+          {messages.length !== 0 ? (
             <>
             <div className="flex items-center gap-3">
               <Image src={assets.logo_icon} alt="" className="h-16" />
@@ -32,7 +33,10 @@ export default function Home() {
             </>
           ):
           (
-          <div></div>)
+          <div>
+            <Message role='user' content='What is next js ?' />
+          </div>
+          )
           }
 
           <PromptBox isLoading={isLoading} setIsLoading={setIsLoading} />
