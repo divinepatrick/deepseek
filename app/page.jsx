@@ -23,7 +23,7 @@ export default function Home() {
             <Image className="opacity-70" src={assets.chat_icon} alt="" />
           </div>
 
-          {messages.length !== 0 ? (
+          {messages.length === 0 ? (
             <>
             <div className="flex items-center gap-3">
               <Image src={assets.logo_icon} alt="" className="h-16" />
